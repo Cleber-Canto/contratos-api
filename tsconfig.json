@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",          // Define o estilo de módulo para commonjs, que é o padrão para ambientes Node.js.
+    "esModuleInterop": true,       // Habilita a interoperabilidade entre módulos ES6 e módulos CommonJS para importar módulos comumente encontrados em JS.
+    "target": "es6",               // Especifica que o código JavaScript gerado deve ser compatível com ECMAScript 6.
+    "moduleResolution": "node",    // Usa a estratégia de resolução de módulos do Node.js para imitar como o Node resolve módulos.
+    "sourceMap": true,             // Gera arquivos .map que são úteis para depuração, mapeando o código compilado de volta para o original TypeScript.
+    "outDir": "dist",              // Define o diretório onde os arquivos JavaScript compilados serão colocados.
+    "baseUrl": ".",                // Define o diretório base para a resolução de módulos não relativos.
+    "paths": {
+      "*": ["node_modules/*", "types/*"]  // Mapeia todos os módulos para procurar em node_modules e um diretório personalizado de tipos.
+    },
+    "typeRoots": ["./node_modules/@types", "./types"],  // Especifica os diretórios onde o compilador deve procurar por arquivos de definição de tipos.
+    "types": ["node"],               // Especifica que tipos de `@types/node` devem ser incluídos automaticamente.
+    "strict": true                   // Habilita todas as opções estritas de checagem de tipo para melhorar a segurança e previsibilidade do código.
+  },
+  "include": [
+    "src/**/*",                     // Inclui todos os arquivos TypeScript no diretório src e subdiretórios para compilação.
+    "src/custom-types.d.ts"             // Inclui um arquivo de definição de tipos personalizados.
+  ],
+  "exclude": [
+    "node_modules",                 // Exclui o diretório node_modules para evitar compilar bibliotecas de terceiros.
+    "**/*.spec.ts"                  // Exclui arquivos de teste de serem compilados no output final.
+  ]
+}
+
